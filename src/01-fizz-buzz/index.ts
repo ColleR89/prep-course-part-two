@@ -16,6 +16,25 @@
  * console.log('buzz')
  */
 
-function fizzBuzz(n: number) {}
+function fizzBuzz(n: number) {
+  let s = "";
+  let c3 = 0,
+    c5 = 0;
+  for (var i = 1; i <= n; i++) {
+    c3++;
+    c5++;
+    if (c3 == 3) {
+      s += "fizz";
+      c3 = 0;
+    }
+    if (c5 == 5) {
+      s += "buzz";
+      c5 = 0;
+    }
+    if (s.length == 0) console.log(i);
+    else console.log(s);
+    s = "";
+  }
+}
 
 export { fizzBuzz };
