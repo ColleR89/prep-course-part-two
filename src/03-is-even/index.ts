@@ -10,6 +10,12 @@
  * isEven(3) === false
  */
 
-function isEven(n: number) {}
+function isEven(n: number): boolean {
+  let isEven = true;
+
+  for (let i = 1; i <= n; i++) isEven = !isEven;
+
+  return isEven;
+}
 
 export { isEven };
