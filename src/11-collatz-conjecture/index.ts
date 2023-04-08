@@ -22,6 +22,23 @@
  * Resulting in 9 steps. So for input n = 12, the return value would be 9.
  */
 
-function steps(n: number) {}
+function steps(n: number) {
+  if (n <= 0) {
+    throw new Error("Only positive numbers are allowed");
+  }
+  let inputNumber: number = n;
+  let numberOfSteps: number = 0;
+  while (inputNumber != 1) {
+    inputNumber = isEven(inputNumber);
+    numberOfSteps++;
+  }
+  return numberOfSteps;
+}
+function isEven(input: number): number {
+  if (input % 2 === 0) {
+    return input / 2;
+  }
+  return 3 * input + 1;
+}
 
 export { steps };
