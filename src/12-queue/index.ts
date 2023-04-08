@@ -13,9 +13,21 @@
  */
 
 class Queue {
-  add(n: number) {}
-
-  remove() {}
+  constructor(
+    private elements: Record<number, number> = {},
+    private head: number = 0,
+    private tail: number = 0
+  ) {}
+  add(n: number) {
+    this.elements[this.tail] = n;
+    this.tail++;
+  }
+  remove() {
+    const item = this.elements[this.head];
+    delete this.elements[this.head];
+    this.head++;
+    return item;
+  }
 }
 
 export { Queue };
