@@ -14,12 +14,32 @@
  * s.pop(); // returns 1
  */
 
-class Stack {
-  push(n: number) {}
+interface IStack {
+  push(n: number): void;
+  pop(): number;
+  peek(): number;
+}
 
-  pop() {}
+class Stack implements IStack {
+  private storage: Array<number> = [];
+  private last: number = 0;
+  constructor(private capacity: number = Infinity) {}
+  push(n: number): void {
+    this.storage[this.last] = n;
+    this.last++;
+    //console.log(this.storage[this.last - 1]);
+  }
 
-  peek() {}
+  pop(): number {
+    const item: number = this.storage[this.last - 1];
+    delete this.storage[this.last - 1];
+    this.last--;
+    return item;
+  }
+
+  peek(): number {
+    return this.storage[this.last - 1];
+  }
 }
 
 export { Stack };
