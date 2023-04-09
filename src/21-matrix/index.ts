@@ -37,12 +37,20 @@
 class Matrix {
   constructor(private matrix: string) {}
 
-  get rows() {
-    return [];
+  get rows(): number[][] {
+    return this.matrix
+      .split("\n")
+      .map((x) => x.split(" "))
+      .map((x) => x.map((x) => +x));
   }
 
   get columns() {
-    return [];
+    let matrix = this.rows;
+    let cols: number[][] = [];
+    for (let i: number = 0; i < matrix[0].length; i++) {
+      cols[i] = matrix.map((x) => x[i]);
+    }
+    return cols;
   }
 }
 
