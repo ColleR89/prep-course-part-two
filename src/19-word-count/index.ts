@@ -10,7 +10,17 @@
  */
 
 class Words {
-  count(str: string) {}
+  count(str: string) {
+    str = str.replace("\n", " ");
+    str = str.replace("\t", " ");
+    str = str.replace("  ", " ").trim();
+    const arr = str.toLowerCase().split(" ");
+    const count: { [index: string]: number } = {};
+    for (const element of arr) {
+      count[element] = (+count[element] || 0) + 1;
+    }
+    return count;
+  }
 }
 
 export { Words };
