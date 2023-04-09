@@ -28,10 +28,53 @@
  */
 
 class PhoneNumber {
-  constructor(input: string) {}
+  constructor(private input: string) {
+    //let tel: string = input;
+  }
 
   number() {
-    return "";
+    //let cleaned: string = this.input.replace(/[\+\.\s\-\(\)]/gi, "").trim();
+
+    let number: string = "";
+    let phone: string = this.input;
+    for (let i = 0; i < phone.length; i++) {
+      const char = phone[i];
+      const charCode = char.charCodeAt(0);
+      if (charCode >= 48 && charCode <= 57) {
+        number += char;
+      } else if ([" ", "-", "(", ")", ".", "+"].includes(char)) {
+        // Klusiņām notīram. Kuššš...
+      } else if (charCode >= 97) {
+        return null;
+      } else {
+        return null;
+      }
+    }
+    if (number.length === 11 && !number.startsWith("1")) {
+      return null;
+    }
+    if (number.length > 11) {
+      return null;
+    }
+    if (number.length > 10 && number.startsWith("1")) {
+      number = number.substr(1);
+    }
+    if (number.length !== 10) {
+      return null;
+    }
+    if (number.startsWith("0")) {
+      return null;
+    }
+    if (number.startsWith("1")) {
+      return null;
+    }
+    if (number[3] === "0") {
+      return null;
+    }
+    if (number[3] === "1") {
+      return null;
+    }
+    return number;
   }
 }
 
