@@ -57,7 +57,7 @@ class PhoneNumber {
       return null;
     }
     if (number.length > 10 && number.startsWith("1")) {
-      number = number.substr(1);
+      number = number.substring(1);
     }
     if (number.length !== 10) {
       return null;
