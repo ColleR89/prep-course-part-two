@@ -13,6 +13,10 @@
  */
 
 function longestWord(sen: string): string {
+  if (!sen) {
+    throw new Error("No input");
+  }
+
   let longestWord: string = sen
     .replace(/[^0-9a-z]/gi, " ")
     .split(" ")

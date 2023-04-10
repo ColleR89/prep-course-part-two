@@ -20,7 +20,7 @@ function fizzBuzz(n: number) {
   let s = "";
   let c3 = 0,
     c5 = 0;
-  for (var i = 1; i <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     c3++;
     c5++;
     if (c3 == 3) {
