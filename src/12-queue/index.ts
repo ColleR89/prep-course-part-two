@@ -13,6 +13,17 @@
  */
 
 class Queue {
+  queue: number[] = [];
+  add(n: number) {
+    this.queue.push(n);
+  }
+
+  remove() {
+    return this.queue.shift();
+  }
+}
+
+/*class Queue {
   constructor(
     private elements: Record<number, number> = {},
     private head: number = 0,
@@ -28,6 +39,6 @@ class Queue {
     this.head++;
     return item;
   }
-}
+}*/
 
 export { Queue };
