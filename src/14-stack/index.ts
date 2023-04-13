@@ -14,7 +14,22 @@
  * s.pop(); // returns 1
  */
 
-interface IStack {
+class Stack {
+  stack: number[] = [];
+  push(n: number) {
+    this.stack.push(n);
+  }
+
+  pop() {
+    return this.stack.pop();
+  }
+
+  peek() {
+    return this.stack[this.stack.length - 1];
+  }
+}
+
+/*interface IStack {
   push(n: number): void;
   pop(): number;
   peek(): number;
@@ -40,6 +55,6 @@ class Stack implements IStack {
   peek(): number {
     return this.storage[this.last - 1];
   }
-}
+}*/
 
 export { Stack };
